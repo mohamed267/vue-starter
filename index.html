@@ -19,7 +19,7 @@
         <p>{{count}}</p>
 
         <button v-on:click="incrementCount" >increment </button>
-        <input v-bind:value="incrementAmount" v-on:input="changeIncrementAmount" />
+        <input type="number" v-model="incrementAmount" />
         
         {{message}}</div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -38,9 +38,6 @@
                 })
             },
             methods: {
-                changeIncrementAmount(e){
-                    this.incrementAmount = Number(e.target.value)
-                },
                 incrementCount() {
                     this.count +=  this.incrementAmount
                 }
