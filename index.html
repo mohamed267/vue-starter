@@ -15,6 +15,11 @@
                 {{number}}
             </li>
         </ul>
+
+        <p>{{count}}</p>
+
+        <button v-on:click="incrementCount" >increment </button>
+        <input v-bind:value="incrementAmount" v-on:input="changeIncrementAmount" />
         
         {{message}}</div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -22,12 +27,23 @@
     <script>
         const { createApp } = Vue;
 
+
         const app = createApp({
             data() {
                 return ({
+                    count: 10,
+                    incrementAmount: 1,
                     message: "hdeelo de vue js",
                     listOfNumbers: [1, 2, 3, 4, 5, 6]
                 })
+            },
+            methods: {
+                changeIncrementAmount(e){
+                    this.incrementAmount = Number(e.target.value)
+                },
+                incrementCount() {
+                    this.count +=  this.incrementAmount
+                }
             }
         });
         app.mount("#app")
