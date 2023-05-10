@@ -7,7 +7,16 @@
 </head>
 <body>
     <h1>  Vue going out here </h1>
-    <div id="app" >{{message}}</div>
+    <div id="app" >
+        <p v-if="message.length % 2 === 0" >Even </p>
+        <p v-if="message.length % 2 === 1" > Odd </p>
+        <ul>
+            <li v-for="number in  listOfNumbers ">
+                {{number}}
+            </li>
+        </ul>
+        
+        {{message}}</div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script>
@@ -16,7 +25,8 @@
         const app = createApp({
             data() {
                 return ({
-                    message: "heelo de vue js"
+                    message: "hdeelo de vue js",
+                    listOfNumbers: [1, 2, 3, 4, 5, 6]
                 })
             }
         });
