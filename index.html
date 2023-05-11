@@ -1,62 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>  Vue going out here </h1>
-    <div id="app" >
-        <h3>{{counterTitle}}</h3>
-        <p v-if="message.length % 2 === 0" >Even </p>
-        <p v-if="message.length % 2 === 1" > Odd </p>
-        <ul>
-            <li v-for="number in  listOfNumbers ">
-                {{number}}
-            </li>
-        </ul>
-
-        <p>{{count}}</p>
-
-        <button v-on:click="incrementCount(13)" >increment </button>
-        <input type="number" v-model="incrementAmount" />
-        
-        {{message}}</div>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-    <script>
-        const { createApp } = Vue;
-
-
-        const app = createApp({
-            data() {
-                return ({
-                    count: 10,
-                    counterTitle: "Standard Title",
-                    incrementAmount: 1,
-                    message: "hdeelo de vue js",
-                    listOfNumbers: [1, 2, 3, 4, 5, 6]
-                })
-            },
-            methods: {
-                incrementCount() {
-                    this.count +=  this.incrementAmount
-                }
-            },
-            watch:{
-                count(newValue) {
-                    if(newValue > 20){
-                        
-                        this.counterTitle += "very long"
-                    }
-                }
-            }
-        });
-        app.mount("#app")
-
-
-</script>
-    
-</body>
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>
