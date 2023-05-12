@@ -1,26 +1,13 @@
 
 
 <script lang="ts">
+import UsersList from "./components/UsersList.vue"
+  
   export default {
     components:{
+      UsersList
     },
-    data(){
-      return(
-        {
-          pokedex: [ 1, 2,3 ]
-        }
-      )
-    },
-    methods: {
-      async fetchPok(){
-
-        this.pokedex =await fetch("https://pokeapi.co/api/v2/pokemon/ditto").then(res=>res.json())
-      
-      }
-    }, 
-    created(){
-      this.fetchPok()
-    }
+    
     
         
   }
@@ -28,16 +15,17 @@
 
 <template>
   <div>
-    {{  pokedex }}
+    <Suspense>
+      <UsersList />
 
-    <button  @click="fetchPok">
-      submit
-    </button>
+      
+      <template #fallback>
+        loding her
+      </template>
+
+
+    </Suspense>
+   
    
   </div>
 </template>
-
-
-<docs>
-  
-</docs>
