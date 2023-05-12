@@ -17,8 +17,9 @@ import UserCard from "./components/UserCard.vue"
 
 <template>
   <div>
-   <BaseCounter  />
-   <UserCard />
+    <router-view />
+   <!-- <BaseCounter  />
+   <UserCard /> -->
    
   </div>
 </template>
