@@ -6,7 +6,7 @@
             head
         </slot>
         <slot >
-            slot defaukt
+            defaukt slot
         </slot>
     </div>
 
