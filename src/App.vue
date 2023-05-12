@@ -17,6 +17,7 @@ import UserCard from "./components/UserCard.vue"
 
 <template>
   <div>
+    <a href="" @click.prevent="login" >login</a>
     <router-view />
    <!-- <BaseCounter  />
    <UserCard /> -->
