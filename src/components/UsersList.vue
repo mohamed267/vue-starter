@@ -1,5 +1,5 @@
 <script lang="ts">
-import { reactive, computed } from "vue"
+import { reactive, computed, defineProps, defineEmits } from "vue"
 
 export default {
   async setup() {

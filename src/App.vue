@@ -1,11 +1,13 @@
 
 
 <script lang="ts">
-import UsersList from "./components/UsersList.vue"
+import BaseCounter from "./components/BaseCounter.vue"
+import UserCard from "./components/UserCard.vue"
   
   export default {
     components:{
-      UsersList
+      BaseCounter,
+      UserCard
     },
     
     
@@ -15,17 +17,8 @@ import UsersList from "./components/UsersList.vue"
 
 <template>
   <div>
-    <Suspense>
-      <UsersList />
-
-      
-      <template #fallback>
-        loding her
-      </template>
-
-
-    </Suspense>
-   
+   <BaseCounter  />
+   <UserCard />
    
   </div>
 </template>
